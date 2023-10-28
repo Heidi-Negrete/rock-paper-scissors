@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwrvhffmeow4l"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_cy8as"]
+[ext_resource type="PackedScene" uid="uid://co7w0ll3301dr" path="res://scenes/choices.tscn" id="2_gc0mk"]
+[ext_resource type="PackedScene" uid="uid://mqjespavs1e1" path="res://scenes/computer.tscn" id="2_ngdp3"]
+[ext_resource type="PackedScene" uid="uid://lxw2sfyahm8x" path="res://scenes/player.tscn" id="3_5lhvy"]
+[ext_resource type="PackedScene" uid="uid://cvwtmknn6d5x6" path="res://scenes/temp.tscn" id="5_bajou"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_cy8as")
+
+[node name="ChoiceManager" parent="." instance=ExtResource("2_gc0mk")]
+
+[node name="Background" type="Sprite2D" parent="."]
+
+[node name="Computer" parent="." instance=ExtResource("2_ngdp3")]
+position = Vector2(581, 464)
+
+[node name="Player" parent="." instance=ExtResource("3_5lhvy")]
+position = Vector2(316, 392)
+
+[node name="MatchResults" type="HBoxContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 26.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="PlayerChoice" type="Label" parent="MatchResults"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Result" type="Label" parent="MatchResults"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+
+[node name="ComputerChoice" type="Label" parent="MatchResults"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Temp" parent="." instance=ExtResource("5_bajou")]
+position = Vector2(878, 388)
+
+[connection signal="player_picks_choice" from="ChoiceManager" to="." method="_on_choice_manager_player_picks_choice"]

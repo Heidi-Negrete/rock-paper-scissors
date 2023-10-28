@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvwtmknn6d5x6"]
+
+[ext_resource type="Texture2D" uid="uid://bxrfc2asg56ig" path="res://assets/imgbin_scissors-hair-cutting-shears-barber-hairdresser-png.png" id="1_l5dag"]
+
+[node name="Temp" type="Sprite2D"]
+rotation = 0.298451
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_l5dag")

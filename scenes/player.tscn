@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://lxw2sfyahm8x"]
+
+[ext_resource type="Texture2D" uid="uid://b13147wcgo50m" path="res://assets/imgbin_rock-granite-boulder-png.png" id="1_nag1s"]
+[ext_resource type="Script" path="res://scenes/player.gd" id="2_1uixa"]
+
+[node name="Player" type="Sprite2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_nag1s")
+script = ExtResource("2_1uixa")

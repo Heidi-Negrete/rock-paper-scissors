@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://co7w0ll3301dr"]
+
+[ext_resource type="Script" path="res://scenes/choices.gd" id="1_b378j"]
+
+[node name="ChoiceManager" type="Node"]
+script = ExtResource("1_b378j")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Rock" type="Button" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "Rock"
+
+[node name="Paper" type="Button" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "Paper"
+
+[node name="Scissors" type="Button" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "Scissors"
+
+[connection signal="button_up" from="CenterContainer/HBoxContainer/Rock" to="." method="_on_rock_button_up"]
+[connection signal="button_up" from="CenterContainer/HBoxContainer/Paper" to="." method="_on_paper_button_up"]
+[connection signal="button_up" from="CenterContainer/HBoxContainer/Scissors" to="." method="_on_scissors_button_up"]
